@@ -1,0 +1,175 @@
+﻿
+<Metrics>
+  <business>
+    <Metric>
+      <Metricname>Brand Awareness Metric</Metricname>
+      <datasource>facebook posts</datasource>
+      <datasource>twitter</datasource>
+      <datasource>adwords referring links</datasource>
+      <datasource>branded search</datasource>
+      <datasource>Brand Mentions</datasource>
+      <visualizationname>table </visualizationname>
+      <visualizationlink>brand_awareness.php</visualizationlink>
+      <description>table showing number of times a product has been talked about across differrent sources with a specificic period</description>
+    </Metric>
+    <Metric>
+      <Metricname>Purchase Funnel</Metricname>
+      <datasource> purchases from leads</datasource>
+      <datasource>purchases from visitors</datasource>
+      <datasource>purchase reports showing purchases from interactions</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>purchase_funnel.php</visualizationlink>
+      <description>bar graph showing purchases from leads, visitors, interactions.</description>
+    </Metric>
+    <Metric>
+      <Metricname>New Leads Generated</Metricname>
+      <datasource>generated via contact</datasource>
+      <datasource>generated via email</datasource>
+      <datasource>generated via social media</datasource>
+      <datasource>generated inperson</datasource>
+      <visualizationname>bar graph</visualizationname>
+      <visualizationlink>new_leads_generated.php</visualizationlink>
+      <description>bar graph showing number of leads generated vs target</description>
+    </Metric>
+    <Metric>
+      <Metricname>Potential New Clients Contacted</Metricname>
+      <datasource>contacted via social media</datasource>
+      <datasource>contacted via phone </datasource>
+      <datasource>contacted via email </datasource>
+      <visualizationname>bar chart</visualizationname>
+      <visualizationlink>potential_clients_contacted.php</visualizationlink>
+      <description>bar chart showing Prospects contacted via social media , phone, email.</description>
+    </Metric>
+    <Metric>
+      <Metricname>Cost per Lead</Metricname>
+      <datasource>generated via email</datasource>
+      <datasource>generated via banner</datasource>
+      <datasource>generated via adwords</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>cost_per_lead.php</visualizationlink>
+      <description>bar graph showing cost per lead generated via email,banner,adwords</description>
+    </Metric>
+    <Metric>
+      <Metricname>Email Marketing stastics</Metricname>
+      <datasource>email campaigns(bounnces,sent, delivered, opened, clicked),subscribers&amp; non subscribers</datasource>
+      <datasource>email bounnces</datasource>
+      <datasource>email sent</datasource>
+      <datasource>email delivered</datasource>
+      <datasource>email opened</datasource>
+      <datasource>email clicked</datasource>
+      <datasource>subscribers</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>email_marketing_stats.php</visualizationlink>
+      <description>bar graph showing Marketing stastics from email campaigns( bounnces,sent, delivered, opened, clicked)</description>
+    </Metric>   
+    <Metric>
+      <Metricname>Sales by Region</Metricname>
+      <datasource>Sales reports showing Volume of sales in a geographic region</datasource>
+      <visualizationname>pie chart </visualizationname>
+      <visualizationlink>sales_by_region.php</visualizationlink>
+      <description>pie chart showing volume of sales in a geographic region</description>
+    </Metric>   
+  </business>
+  <product>
+    <Metric>
+      <Metricname>Web Traffic Sources</Metricname>
+      <datasource>referral traffic</datasource>
+      <datasource>search traffic</datasource>
+      <datasource>direct traffic</datasource>
+      <datasource>Campaign traffic</datasource>
+      <visualizationname>line graph </visualizationname>
+      <visualizationlink>web_traffic_sources.php</visualizationlink>
+      <description>line graph indicating traffic referral traffic, search traffic, direct traffic,Campaign traffic over a given period</description>
+    </Metric>
+    
+  </product>
+  <project>
+    
+    <Metric>
+      <Metricname>Projects obtained</Metricname>
+      <datasource> contact</datasource>
+      <datasource>email</datasource>
+      <datasource>socialmedia</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>projects_obtained.php</visualizationlink>
+      <description>bar graph showing the total number of projects obtained vs target</description>
+    </Metric>
+    <Metric>
+      <Metricname>Percentage of  Green Projects</Metricname>
+      <datasource>project report showing number of green projects</datasource>
+      <visualizationname>count </visualizationname>
+      <visualizationlink>overall_project_progress.php</visualizationlink>
+      <description>count showing the percentage of green projects</description>
+    </Metric>
+    <Metric>
+      <Metricname>Overall project progress</Metricname>
+      <datasource>project report showing overall project progress according any software development progress</datasource>
+      <visualizationname>gauge </visualizationname>
+      <visualizationlink>overall_project_progress.php</visualizationlink>
+      <description>gauge for each process showing the percentage of completeness</description>
+    </Metric>
+    <Metric>
+      <Metricname>Number of cancelled projects</Metricname>
+      <datasource>project report showing number of cancelled projects</datasource>
+      <visualizationname>count</visualizationname>
+      <visualizationlink>number_of_cancelled_projects.php</visualizationlink>
+      <description>a number showing number of cancelled projects</description>
+    </Metric>
+  </project>
+  <team>
+    <Metric>
+      <Metricname>Number of hours worked</Metricname>
+      <datasource> Number of hours worked per person</datasource>
+      <visualizationname>table </visualizationname>
+      <visualizationlink>number_of_hours_worked.php</visualizationlink>
+      <description>table showing task assigned, workload number of hours worked per employee</description>
+    </Metric>
+    <Metric>
+      <Metricname>Average Handle Time</Metricname>
+      <datasource>Project work(in time) report showing workload completed vs time taken</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>average_handle_time.php</visualizationlink>
+      <description>bar graph showing average handle time for each employee</description>
+    </Metric>
+    <Metric>
+      <Metricname>Projects handled by an individual</Metricname>
+      <datasource>project reports showing  number of Projects handled by an individual</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>project_handled_by_individual.php</visualizationlink>
+      <description>bar graph showing  number of Projects handled by an individual</description>
+    </Metric>
+  </team>
+  <resources>
+    <Metric>
+      <Metricname>Resource utilization</Metricname>
+      <datasource>project reports</datasource>
+      <visualizationname>gauge </visualizationname>
+      <visualizationlink>#</visualizationlink>
+      <description>gauge showing rate of resource utilization</description>
+    </Metric>
+    <Metric>
+      <Metricname>Gender Ratio</Metricname>
+      <datasource>Resources reports showing number of female vs male emmployees</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>gender_ratio.php</visualizationlink>
+      <description>bar graph showing number of male and female employees</description>
+    </Metric>
+    <Metric>
+      <Metricname> Headcount </Metricname>
+      <datasource>full-time employees</datasource>
+      <datasource>casual employees</datasource>
+      <datasource> part-time employees</datasource>
+      <visualizationname>bar graph </visualizationname>
+      <visualizationlink>headcount.php</visualizationlink>
+      <description>bar graph showing number of full-time,casual, part-time employees</description>
+    </Metric>
+    <Metric>
+      <Metricname>Open Job Requisitions</Metricname>
+      <datasource>HR reports showing approved Job vacancies</datasource>
+      <visualizationname>bar graph</visualizationname>
+      <visualizationlink>open_job_requisitions.php</visualizationlink>
+      <description>bar graph indicating open positions and specific department</description>
+    </Metric>
+  </resources>
+  
+</Metrics>

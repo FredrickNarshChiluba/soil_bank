@@ -1,0 +1,107 @@
+  public function store(Request $request){
+        $data = $request->all();
+        
+        $user=$request->clients;
+        $user_id = User::where(['name' => $request->input('clients')])->first()->id;
+        
+        // dd($user_id);
+        $client_request = DB::table('voucher_requests')->where(['is_used' =>1])->get();
+        
+        $rules = array(
+           'license_period'=>'required'
+        );
+
+        $validator = Validator::make($data, $rules);
+        
+        // $validator = $request->validate([$data, $rules]);
+        
+        if ($validator->fails()){
+            return Redirect::back()->with(['error'=>'Please Select the copoun Period']);
+        }else{
+            $serials = Copouns::where('is_used','!=',1)->get();
+            $licensePeriod = $request->license_period;
+
+           
+            if($licensePeriod == AppConstants::ONE_YEAR_LICENSE){
+                // $CD_key =  CopounGenerator::getOneYearLicense();
+                $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                $segment_chars = 5;
+                $num_segments = 5;
+                $key_string = '';
+
+        for ($i = 0; $i < $num_segments; $i++) {
+
+            $segment = '';
+
+            for ($j = 0; $j < $segment_chars; $j++) {
+                $segment .= $tokens[rand(0, 35)];
+            }
+
+            $key_string .= $segment;
+
+            if ($i < ($num_segments - 1)) {
+                $key_string .= '-';
+            }
+
+        }
+        $key_period = substr($key_string, 2, 27);
+        $oneYear    = '11';
+        $oneYearLicense = $oneYear.$key_period;
+        // dd( $oneYearLicense); 
+                $this->storeCDKey($oneYearLicense,$licensePeriod,$user_id);
+                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully ','serials'=>$serials]);
+            }elseif ($licensePeriod == AppConstants::TWO_YEARS ){
+                $CD_key = CopounGenerator::getTwoYearLicense();
+                // dd( $CD_key);
+                $this->storeCDKey($CD_key,$licensePeriod,$user_id);
+                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully','serials'=>$serials]);
+            }elseif ($licensePeriod == AppConstants::THREE_YEARS){
+                $CD_key =  CopounGenerator::getThreeYearLicense();
+                // dd( $CD_key);
+                $this->storeCDKey($CD_key,$licensePeriod,$user_id);
+                return Redirect::back()->with(['success'=>'Copoun is Generated Successfully','serials'=>$serials]);
+            }
+
+        }
+    }
+
+    public function storeCDKey($CDkey, $periodOfLicense,$user_id){
+        $serial = new Copouns();
+        $serial->user_id = $user_id;
+        $serial->code = $CDkey;
+        $serial->period = $periodOfLicense;
+        $serial->total_days = $periodOfLicense;
+        $serial->expiry_date = date('Y-m-d', strtotime('+5 years'));
+        $serial->usage_start_date = date('Y-m-d');
+        $serial->save();
+
+        // $employees = DB::table('users')->where(['id' => $user_id])->get();
+        // dd($employees);
+
+
+        // foreach( $employees as $employee){
+            
+        //     $name=$employee->name;
+        //     $email=$employee->email;
+        //     // $email="tumusiimet777@gmail.com";
+        // }
+
+        // $details = [
+        //     'greeting' => "Hello Mr/Miss $name ",
+        //     'body' => 'copoun Response',
+        //     'thanks' => " Attached $CDkey  is your  copoun code,thanks for choosing our services ",
+        //     'actionText' => " please fill it into the form provided on the link below",
+        //     'actionURL' => url('client_vouncher/create')
+        // ];
+
+        // // dd($details ,$email);
+        // // $user =   Notification::send($email,new Copoun($details));
+        // Notification::route('mail', $email)->notify(new Copoun($details));
+        // dd($serial);
+        
+
+
+    }
+
+
+}
