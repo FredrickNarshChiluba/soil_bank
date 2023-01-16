@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/edbpaat/public_html/soil_bank
+    - export DEPLOYPATH=/home2/edbpaat/public_html
     - /bin/cp -r * $DEPLOYPATH
