@@ -133,6 +133,7 @@
                             <input class="form-control @error('field_unit') is-invalid @enderror" type="text" id="field_unit" name="field_unit" value="{{ old('field_unit',$employee->field_unit) }}"readonly/>
                             @error('field_unit') {{ $message }} @enderror
                         </div>
+                        <!-- added -->
                         <div class="form-group">
                         <label class="control-label">land location cordinates</label>
                             <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="land_location_cordinates" value="Latitude: {{ old('land_location_cordinates',$employee->x_cordinate_lat) }}, Longitude: {{ old('land_location_cordinates',$employee->y_cordinate_long) }}" name="land_location_cordinates"readonly/>
