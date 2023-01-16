@@ -101,7 +101,7 @@ class LandController extends Controller
         // ]);
 
         $employee = $request->all();
-        // dd($request->Soil_type);
+        // dd($employee);
         // $emplo =Land::create($employee);
         $emplo =Nutrients::create($employee);
 
@@ -162,7 +162,7 @@ class LandController extends Controller
             'field_name'      =>  'required|max:191',
             'Land_size'     =>  'required|max:191',
             'field_unit'  =>  'required|max:191',
-            'land_location_cordinates'=>  'required|max:191',
+            'land_location_district'=>  'required|max:191',
             'farmer_name'      =>  'required|max:191',
             'farmer_email'     =>  'required|max:191',
             'farmer_address'      =>  'required|max:191',

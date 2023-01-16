@@ -21,7 +21,7 @@ class ClientController extends Controller
     public function index()
     {
         //
-        $employees = DB::table('users')->where(['Role' => 0])->get();
+        $employees = DB::table('users')->where(['Role' => 'Client'])->get();
         // dd($employees);
         return view('site.Clients.index', compact('employees'));
     }

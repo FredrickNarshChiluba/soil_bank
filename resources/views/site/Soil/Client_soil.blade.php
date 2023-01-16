@@ -52,12 +52,12 @@
                         
                         <div class="form-group">
                             <label class="control-label" for="Soil_texture">Soil Texture  <span class="m-l-5 text-danger"> *</span></label>
-                            <input class="form-control @error('Soil_texture') is-invalid @enderror" type="text" name="Soil_texture" id="Soil_texture" value="{{ old('Soil_texture',$employee->Soil_texture) }} "readonly/>
+                            <input class="form-control @error('Soil_texture') is-invalid @enderror" type="text" name="Soil_texture" id="Soil_texture" value="Clay:{{ old('Soil_texture',$employee->Soil_texture_clay) }},  Sand:{{ old('Soil_texture',$employee->Soil_texture_sand) }}, Silt:{{ old('Soil_texture',$employee->Soil_texture_silt) }}"readonly/>
                             @error('Soil_texture') {{ $message }} @enderror
                         </div>
                         <!-- nutrients -->
                         <div class="form-group">
-                            <label class="control-label" for="Soil_phps">Soil PHP <span class="m-l-5 text-danger"> *</span></label>
+                            <label class="control-label" for="Soil_phps">Soil PH <span class="m-l-5 text-danger"> *</span></label>
                             <input min="6.00" max="7.20" class="form-control @error('Soil_phps') is-invalid @enderror" type="number" name="Soil_phps" id="Soil_phps" value="{{ old('Soil_phps',$employee->Soil_phps) }}"readonly/>
                             @error('Soil_phps') {{ $message }} @enderror
 
@@ -135,8 +135,12 @@
                         </div>
                         <div class="form-group">
                         <label class="control-label">land location cordinates</label>
-                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="land_location_cordinates" value="{{ old('land_location_cordinates',$employee->land_location_cordinates) }}" name="land_location_cordinates"readonly/>
+                            <input class="form-control @error('land_location_cordinates') is-invalid @enderror" type="text" id="land_location_cordinates" value="Latitude: {{ old('land_location_cordinates',$employee->x_cordinate_lat) }}, Longitude: {{ old('land_location_cordinates',$employee->y_cordinate_long) }}" name="land_location_cordinates"readonly/>
                             @error('land_location_cordinates') {{ $message }} @enderror
+                        </div>
+                        <label class="control-label">land location District</label>
+                            <input class="form-control @error('land_location_district') is-invalid @enderror" type="text" id="land_location_district" value="{{ old('land_location_district',$employee->land_location_district) }}" name="land_location_district"readonly/>
+                            @error('land_location_district') {{ $message }} @enderror
                         </div>
 
                        

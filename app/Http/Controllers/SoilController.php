@@ -20,7 +20,7 @@ class SoilController extends Controller
     public function index()
     {
         //
-        $employees = DB::table('soil')->get();
+        $employees = DB::table('nutrients')->get();
         // dd($employees);
         return view('site.Soil.index', compact('employees'));
     }

@@ -35,16 +35,20 @@
                                   
                                     
                                     <td>{{ $employ->field_name }}</td>
-                                    <td>{{ $employ->soil_type }}</td>
-                                    <td>{{ $employ->soil_texture }}</td>
-                                    <td>{{ $employ->land_size }}</td>
+                                    <td>{{ $employ->Soil_type }}</td>
+                                    <td>
+                                        <b>Sand: </b>{{ $employ->Soil_texture_sand }}
+                                        &nbsp;<b>Clay: </b>{{ $employ->Soil_texture_clay }}
+                                        &nbsp;<b>Silt: </b>{{ $employ->Soil_texture_silt }}
+                                    </td>
+                                    <td>{{ $employ->Land_size }}</td>
                                     <td>{{ $employ->soil_color }}</td>
                                     <td>{{ $employ->field_unit }}</td>
                                     
                                   
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <a href="{{ route('site.Soil.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
+                                            <a href="{{ route('site.Land.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
                                             <!-- <a href="{{ route('site.Employees.edit', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
                                         </div>
                                     </td>

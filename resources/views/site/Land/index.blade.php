@@ -37,9 +37,9 @@
                                   
                                     
                                     <td>{{ $employ->Soil_type }}</td>
-                                    <td>{{ $employ->land_location_cordinates }}</td>
-                                    <td>{{ $employ->land_location_cordinates }}</td>
-                                    <td>{{ $employ->land_location_cordinates }}</td>
+                                    <td>{{ $employ->x_cordinate_lat }}</td>
+                                    <td>{{ $employ->y_cordinate_long }}</td>
+                                    <td>{{ $employ->land_location_district }}</td>
                                     <td>{{ $employ->farmer_name }}</td>
                                     <td>{{ $employ->farmer_contact }}</td>
                                     
