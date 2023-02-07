@@ -22,7 +22,7 @@ class EmployeeController extends Controller
     public function index()
     {
         //    $this->setPageTitle('Employees', 'List of all Employees');
-        $employees = DB::table('users')->where(['Role' => 1])->get();
+        $employees = DB::table('users')->where(['Role' => 'Client'])->get();
         return view('site.Employees.index', compact('employees'));
     }
 
@@ -50,10 +50,11 @@ class EmployeeController extends Controller
         if ($file) {
             //  Let's do everything here
             // if ($request->file('PHOTO')->isValid()) {
-            $Role=$request->Role;
-            if ($Role != 1) {
-                $Role=0;
-            }
+            // $Role=$request->Role;
+            // if ($Role != 1) {
+            //     $Role=0;
+            // }
+            // dd($request->Role);
 
             $validated = $request->validate([
                 'name'      =>  'required|max:191',
@@ -76,10 +77,11 @@ class EmployeeController extends Controller
                 'password' => Hash::make($request->password),
                 'address' => $request->address,
                 'image' => $image_file,
-                'url' => $PHOTO_url,
-                'Role' => $Role,
+                'url' => $PHOTO_url
             ]);
             
+            DB::table('users')->where(['email' => $request->email])->update(['Role'=>$request->Role]);
+
             new Registered($adverts);
             // dd($adverts);
             // $employee = $request->all();
@@ -92,7 +94,7 @@ class EmployeeController extends Controller
             return back()->with('site.Employees.index', 'Employees details added successfully', 'success', false, false);
             // }
         }
-        dd('text');
+        // dd('text');
     }
 
     /**
@@ -155,6 +157,7 @@ class EmployeeController extends Controller
     {
         $employee = User::findOrFail($id);
         $employee->delete();
-        return $this->responseRedirect('site.Employees.index', 'Employee Account deleted successfully', 'success', false, false);
+        return $this->index();
+        // return $this->responseRedirect('site.Employees.index', 'Employee Account deleted successfully', 'success', false, false);
     }
 }

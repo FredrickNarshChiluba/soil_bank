@@ -45,7 +45,10 @@
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
                                             <a href="{{ route('site.Employees.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
-                                            <!-- <a href="{{ route('site.Employees.edit', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
+                                            @if(Auth::user()->Role=='Super Admin')
+                                            &nbsp;
+                                            <a href="{{ route('site.Employees.delete', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash">DELETE</i></a>
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>

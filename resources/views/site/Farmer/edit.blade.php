@@ -37,8 +37,8 @@
                                         type="text"
                                         placeholder="Enter  farmer name"
                                         id="farmer_name"
-                                        name="farmer_name"
-                                        value="{{$employee->farmer_name }}"
+                                        name="name"
+                                        value="{{$employee->name }}"
                                     />
                                     <input type="hidden" name="id" value="{{ $employee->id }}">
                                     <div class="invalid-feedback active">
@@ -54,8 +54,8 @@
                                                 type="text"
                                                 placeholder="Enter  farmer email"
                                                 id="farmer_email"
-                                                name="farmer_email"
-                                                value="{{ $employee->farmer_email }}"
+                                                name="email"
+                                                value="{{ $employee->email }}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_email') <span>{{ $message }}</span> @enderror
@@ -74,8 +74,8 @@
                                                 type="text"
                                                 placeholder="Enter Employee farmer_address"
                                                 id="farmer_address"
-                                                name="farmer_address"
-                                                value="{{$employee->farmer_address }}"
+                                                name="address"
+                                                value="{{$employee->address }}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_address') <span>{{ $message }}</span> @enderror
@@ -94,8 +94,8 @@
                                                 type="text"
                                                 placeholder="Enter Employee farmer_contact"
                                                 id="farmer_contact"
-                                                name="farmer_contact"
-                                                value="{{$employee->farmer_contact}}"
+                                                name="Phone"
+                                                value="{{$employee->Phone}}"
                                             />
                                             <div class="invalid-feedback active">
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('farmer_contact') <span>{{ $message }}</span> @enderror

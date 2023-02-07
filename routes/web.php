@@ -137,7 +137,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/store', 'App\Http\Controllers\EmployeeController@store')->name('site.Employees.store');
         Route::get('/{id}/edit', 'App\Http\Controllers\EmployeeController@edit')->name('site.Employees.edit');
         Route::post('/update', 'App\Http\Controllers\EmployeeController@update')->name('site.Employees.update');
-        Route::get('/{id}/delete', 'App\Http\Controllers\EmployeeController@delete')->name('site.Employees.delete');
+        Route::get('/{id}/delete', 'App\Http\Controllers\EmployeeController@destroy')->name('site.Employees.delete');
     });
 
 
@@ -151,7 +151,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/store', 'App\Http\Controllers\SoilController@store')->name('site.Soil.store');
         Route::get('/{id}/edit', 'App\Http\Controllers\SoilController@edit')->name('site.Soil.edit');
         Route::post('/update', 'App\Http\Controllers\SoilController@update')->name('site.Soil.update');
-        Route::get('/{id}/delete', 'App\Http\Controllers\SoilController@delete')->name('site.Soil.delete');
+        Route::get('/{id}/delete', 'App\Http\Controllers\SoilController@destroy')->name('site.Soil.delete');
         Route::get('/{id}', 'App\Http\Controllers\SoilController@Client_soil')->name('site.Soil.Client_soil');
     });
 
@@ -215,13 +215,12 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::group(['prefix'  =>   'LAND'], function () {
-
         Route::get('/', 'App\Http\Controllers\LandController@index')->name('site.Land.index');
         Route::get('/create', 'App\Http\Controllers\LandController@create')->name('site.Land.create');
         Route::post('/store', 'App\Http\Controllers\LandController@store')->name('site.Land.store');
         Route::get('/{id}/edit', 'App\Http\Controllers\LandController@edit')->name('site.Land.edit');
         Route::post('/update', 'App\Http\Controllers\LandController@update')->name('site.Land.update');
-        Route::get('/{id}/delete', 'App\Http\Controllers\LandController@delete')->name('site.Land.delete');
+        Route::get('/{id}/delete', 'App\Http\Controllers\LandController@destroy')->name('site.Land.delete');
     });
 
     Route::group(['prefix'  =>   'FARMER'], function () {
@@ -231,7 +230,7 @@ Route::group(['middleware' => ['auth']], function () {
         // Route::post('/store', 'FarmerController@store')->name('site.Farmer.store');
         Route::get('/{id}/edit', 'App\Http\Controllers\FarmerController@edit')->name('site.Farmer.edit');
         Route::post('/update', 'App\Http\Controllers\FarmerController@update')->name('site.Farmer.update');
-        Route::get('/{id}/delete', 'App\Http\Controllers\FarmerController@delete')->name('site.Farmer.delete');
+        Route::get('/{id}/delete', 'App\Http\Controllers\FarmerController@destroy')->name('site.Farmer.delete');
     });
 
     Route::get('change-password', 'ChangePasswordController@index')->name('site.change.password');

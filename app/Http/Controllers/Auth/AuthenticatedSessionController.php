@@ -55,6 +55,16 @@ class AuthenticatedSessionController extends Controller
 
         if (auth()->user()->Role == 'Admin' || auth()->user()->Role == 'Super Admin' || auth()->user()->Role == 'Data Entrant' || auth()->user()->Role == 'Technician') {
             return redirect()->route('Dashboard');
+        } elseif (auth()->user()->Role == 'Farmer') {
+            // dd("farmer");
+            $employees = DB::table('land')->get();
+            $employees = DB::select('select * from nutrients');
+            $employees_vouc = DB::select('select * from tokens');
+            $employee = auth()->user()->id;
+            $employees_voucs = Copouns::where('user_id', '=', $employee)->get()->count();
+            // dd($employees_vouc); after copoun purchase
+            // Copouns::where(['user_id' => auth()->user()->id])->update(['is_used' => '1']);
+            return view('site.Purchase.index4', compact('employees', 'employees_voucs'));
         } else {
 
             // dd($request->email);

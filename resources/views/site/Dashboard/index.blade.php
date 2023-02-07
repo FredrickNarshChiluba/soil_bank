@@ -70,7 +70,7 @@
             </div>
         </div>
     </div><br>
-    @if(Auth::user()->Role=='Admin')
+    @if(Auth::user()->Role=='Admin' || Auth::user()->Role=='Super Admin')
     <div class="row">
 
         <div class="col-sm-6">

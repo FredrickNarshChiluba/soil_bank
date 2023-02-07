@@ -184,9 +184,10 @@ class LandController extends Controller
     public function destroy($id)
     {
         //
-        $employee = Land::findOrFail($id);
+        // dd($id);
+        $employee = Nutrients::findOrFail($id);
         $employee->delete();
-        return $this->responseRedirect('site.Land.index', 'Land Account deleted successfully' ,'success',false, false);
+        return $this->index();
     
     }
 }

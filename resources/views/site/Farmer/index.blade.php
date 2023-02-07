@@ -32,15 +32,15 @@
                                 <tr>
                                   
                                     
-                                    <td>{{ $employ->farmer_name }}</td>
-                                    <td>{{ $employ->farmer_address }}</td>
-                                    <td>{{ $employ->farmer_contact }}</td>
+                                    <td>{{ $employ->name }}</td>
+                                    <td>{{ $employ->email }}</td>
+                                    <td>{{ $employ->address }}</td>
                                    
                                   
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
-                                            <a href="{{ route('site.Farmer.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>
-                                            <!-- <a href="{{ route('site.Employees.edit', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a> -->
+                                            <a href="{{ route('site.Farmer.edit', $employ->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit">EDIT</i></a>&nbsp;
+                                            <a href="{{ route('site.Farmer.delete', $employ->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash">DELETE</i></a>
                                         </div>
                                     </td>
                                 </tr>

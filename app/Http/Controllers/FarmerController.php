@@ -18,7 +18,7 @@ class FarmerController extends Controller
     public function index()
     {
         //
-        $employees = DB::table('farmers')->get();
+        $employees = DB::table('users')->where(['Role' => 'Farmer'])->get();
         // dd($employees);
         return view('site.Farmer.index', compact('employees'));
     }
@@ -92,7 +92,8 @@ class FarmerController extends Controller
     public function edit($id)
     {
         //
-        $employee = Farmers::findOrFail($id);
+        $employee = User::findOrFail($id);
+        // dd($employee);
         return view('site.Farmer.edit', compact('employee'));
     }
 
@@ -107,10 +108,10 @@ class FarmerController extends Controller
     {
         $employee = $request->validate([
 
-            'farmer_name'      =>  'required|max:191',
-            'farmer_email'     =>  'required|max:191',
-            'farmer_address'      =>  'required|max:191',
-            'farmer_contact'     =>  'required|max:191'
+            'name'      =>  'required|max:191',
+            'email'     =>  'required|max:191',
+            'address'      =>  'required|max:191',
+            'Phone'     =>  'required|max:191'
 
         ]);
 
@@ -129,11 +130,12 @@ class FarmerController extends Controller
         //     'farmer_contact'     =>  'required|max:191'
 
         //     ]);
-        Farmers::whereId($request->id)->update($employee);
+        User::whereId($request->id)->update($employee);
+        return $this->index();
         
-        $employees = DB::table('farmers')->get();
+        // $employees = DB::table('users')->get();
         // dd($employees);
-        return view('site.Farmer.index', compact('employees'));
+        // return view('site.Farmer.index', compact('employees'));
         // return redirect('/coronas')->with('success', 'Corona Case Data is successfully updated');
         // return $this->responseRedirect('site.Farmer.index', 'Farmer detail updated successfully', 'success', false, false);
     }
@@ -147,8 +149,9 @@ class FarmerController extends Controller
     public function destroy($id)
     {
         //
-        $employee = Land::findOrFail($id);
+        $employee = User::findOrFail($id);
         $employee->delete();
-        return $this->responseRedirect('site.Farmer.index', 'Farmer Account deleted successfully', 'success', false, false);
+        return $this->index();
+        // return $this->responseRedirect('site.Farmer.index', 'Farmer Account deleted successfully', 'success', false, false);
     }
 }

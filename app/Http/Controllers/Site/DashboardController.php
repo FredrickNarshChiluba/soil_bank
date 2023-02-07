@@ -23,10 +23,10 @@ class DashboardController extends Controller
         //  $attributes = Attribute::all();
         // $this->attributeRepository->listAttributes();
         //  $categories=Product::all();
-        $employees_vou_ip= DB::table('copoun')->where(['is_used' =>0]);
+        $employees_vou_ip= DB::table('copoun')->where(['is_used' =>'expired']);
         // dd($employees_vou_ip); 
-        $employees_vou_ips= DB::table('copoun')->where(['is_used' =>1]);
-        $employees_vou_ipsd= DB::table('users')->where(['Role' =>1]);
+        $employees_vou_ips= DB::table('copoun')->where(['is_used' =>'0']);
+        $employees_vou_ipsd= DB::table('users')->where(['Role' =>'Client']);
         $employees_vou_ipsdd= DB::table('nutrients');
 
         $employee = User::all();

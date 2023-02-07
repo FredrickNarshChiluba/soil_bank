@@ -72,7 +72,7 @@
                     <a class="dropdown-item" href=""><i class="fa fa-cog fa-lg"></i> Settings</a>
                 </li>
                 <li>
-                    @if(auth()->user()->Role==1)
+                    @if(auth()->user()->Role=='Admin' || auth()->user()->Role=='Super Admin')
                     <a class="dropdown-item" href="{{url('profiles')}}"><i class="fa fa-users "></i>&nbsp;&nbsp;profile</a>
                     @else
                     <a class="dropdown-item" href="{{url('profile')}}"><i class="fa fa-user"></i>&nbsp;&nbsp;profile</a>

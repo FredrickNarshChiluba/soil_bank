@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Land;
+use App\Models\Nutrients;
+
 class LandController extends Controller
 {
     /**
@@ -134,9 +136,10 @@ class LandController extends Controller
     public function destroy($id)
     {
         //
-        $employee = Land::findOrFail($id);
+        dd($id);
+        $employee = Nutrients::findOrFail($id);
         $employee->delete();
-        return $this->responseRedirect('site.Land.index', 'Land Account deleted successfully' ,'success',false, false);
+        return $this->responseRedirect('site.Land.index', 'Deleted successfully' ,'success',false, false);
     
     }
 }
